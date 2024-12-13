@@ -9,7 +9,7 @@ def index(request):
 
 
 def show_catalog(request):
-    sort = request.GET['sort']
+    sort = request.GET.get('sort')
     if sort =='max_price':
         phones_all = Phone.objects.all().order_by('-price')
     elif sort == 'min_price':
